@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Working Example</title>
+        <link rel="stylesheet" href="css/primary.css"/>
+    </head>
+
+    <body>
+        <h1>Completing the connection to GitHub</h1>
+
+        <h2>What We Did Together</h2>
+        <ol>
+            <li>Create a folder and add files</li>
+            <li>Initialize the folder as a local repository</li>
+            <li>Stage files in the folder and commit changes as needed</li>
+            <li>Create a GitHub account and login</li>
+            <li>Identify a GitHub repository as the remote origin for our
+                local repository
+            </li>
+        </ol>
+
+        <h2>What Wasn't Working</h2>
+        <p>The push command and pull commands that would allow us to upload and
+           download content from our two related repositories were not functional
+           because the version <em>histories</em> were different. The Git software
+           could detect that we had different commits on our local machine that did not
+           exist on the remote repository.
+        </p>
+
+        <h2>The Fix</h2>
+        <p>We needed to give our pull command, with a switch that specifically allows
+           for different histories between our two repositories. This would look like:
+           <br><br>
+           <code> git pull --allow-unrelated-histories origin main</code>
+        </p>
+        <p>If you had existing files in the remote repository that were not identical
+           to the versions in your local repository, Visual Studio Code will then walk
+           you through reviewing the conflicts and accepting one version or the other
+           as the "correct" version. Once complete, you can finalize the connection with
+           one last <code>git commit -m "Final remote synch complete!"</code> command.
+        </p>
+    </body>
+</html>
